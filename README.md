@@ -7,7 +7,7 @@ _So, follow up for more!_
 
 ## Contents Included:
 
-✅__`JS Basics Concepts`__\
+✅`__JS Basics Concepts__`\
 ✅__`JS Handwritten Notes`__\
 ✅__`JS Class Codes`__\
 ✅__`JS Code Practice`__
