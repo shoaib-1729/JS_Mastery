@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <!-- Adding JS externally using 'script' tag and 'src' attribute (recommended due to 'separation of concerns')-->
+    <!-- External JS pehle execute hoga, isiliye usko high priority milegi as compared to internal JS -->
+    <script src="./index.js"></script>
+
+    <!-- Adding JS internally using 'script' tag -->
+
+    <!-- Script tag in head section (not recommended, User Experience hinder karta hai!) -->
+    <!-- <script>
+        alert("Hello Jee Kaise Ho Saare?");
+        console.log("let's learn JS!");
+    </script> -->
+</head>
+
+<body>
+    Namaste Duniya!
+
+    <!-- Adding JS internally using 'script' tag -->
+
+    <!-- Script tag should be placed at bottom of the body (so that JS part would be loaded after all the structure and styling part is rendered on the web page!) -->
+    <script>
+        // alert("Internal JS wala alert!");
+        console.log("Internal JS wala console.");
+    </script>
+</body>
+
+</html>
