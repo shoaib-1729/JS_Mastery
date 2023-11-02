@@ -134,33 +134,33 @@
 
 
 // Dynamic Nature of Objects (i.e. additional & removal of properties of objects)
-function Rect() {
+// function Rect() {
 
-    this.length = 3;
-    this.breadth = 1;
-    this.draw = function() {
+//     this.length = 3;
+//     this.breadth = 1;
+//     this.draw = function() {
 
-        console.log("Drawing Rectangle.");
-    }
-}
+//         console.log("Drawing Rectangle.");
+//     }
+// }
 
 // adding new property to 'Rect' object
-let rectObj = new Rect();
-rectObj.color = "yellow";
-console.log("Property added.");
-console.log(rectObj);
+// let rectObj = new Rect();
+// rectObj.color = "yellow";
+// console.log("Property added.");
+// console.log(rectObj);
 
 
 
 //adding methods
-console.log("Method added.");
-rectObj.colorFill = function() {
+// console.log("Method added.");
+// rectObj.colorFill = function() {
 
-    console.log("Yellow color Filled.");
-};
+//     console.log("Yellow color Filled.");
+// };
 
-console.log(rectObj);
-console.log(rectObj.colorFill());
+// console.log(rectObj);
+// console.log(rectObj.colorFill());
 
 
 // since, objects are reference data types isiliye changes same address par hote hai, so don't run addition & deletion operation simultaneously (function is also an object,this we will see later in the code!)
@@ -168,3 +168,104 @@ console.log(rectObj.colorFill());
 // delete rectObj.length;
 // console.log("Property deleted.");
 // console.log(rectObj);
+
+
+
+//Constructor Property (constructor is a property of objects)
+// function Rectangle(len, br) {
+
+//     this.length = len;
+//     this.breadth = br;
+//     this.draw = function() {
+
+//         console.log("Drawing Rectangle.");
+//     }
+// }
+
+// here Rectangle() is a constructor of objName (i.e. objName is initialized by Rectangle() constructor)
+// let objName = new Rectangle(6, 2);
+// console.log(objName.constructor);
+
+
+//Since, function is also an object, then what is the constructor of Rectangle()
+// 'Function' is the parent constructor of 'Rectangle' i.e. all the constructor will get inherited from this only!
+
+// Internal Implementation of 'Function'
+// Syntax Function("parameters of Rectangle", `code inside Rectangle`)
+// Here Rectangle() constructor has been initialized by the Function constructor
+// let Rectangle = new Function("len", "br",
+//     ` this.length = len;
+// this.breadth = br;
+// this.draw = function() {
+
+//     console.log("Drawing Rectangle.");
+// }`);
+
+// let objName = new Rectangle(5, 3);
+// console.log(objName);
+
+
+
+//Function is an Object
+//Since, for eg. Rectangle() function ki apni kuch properties hai jaise ki length, breadth, name, etc aur apne kuch methods bhi hai jaise ki bind(), call(), apply(), draw(), etc hence functions as well are objects...
+
+
+// Types of JS
+
+// Primitive or Value Types (like Number, String, Boolean, Undefined, Null)
+// Reference types or Object (like Arrays, Objects, Functions)
+
+
+// Primitive data types v/s Reference Data types
+// Primitive mei variables ki value ki copy pass hoti hai, yaani depend karega ki hum ki kismei change kar rahe hai original  variable mei ya uski copy mei...
+// console.log("Primitive Types: )-")
+// let a = 10;
+// let b = a;
+// a++;
+
+// console.log("Value:" + a);
+// console.log("value:" + b);
+
+
+//Reference Data Types
+//Reference mei variable ka reference (address) pass hota hai, yaani jo bhi changes hum karege woh usi same address pr hoge
+// console.log("Reference Types: )-")
+
+// let c = { value: 10 };
+// let d = c;
+// c.value++;
+
+// console.log("Value:" + c.value);
+// console.log("Value:" + d.value);
+
+
+
+
+// One more example
+
+//Primitive Type
+console.log("Primitive type: ) -")
+
+// Function
+function inc_01(a) {
+    a++;
+    console.log("Inside function:" + a);
+
+}
+
+let a = 10;
+inc_01(a);
+console.log("Outside function:" + a);
+
+//Reference Type
+console.log("Reference Type: ) -")
+
+function inc_02(c) {
+
+    c.value++;
+    console.log("Inside function:" + c.value);
+
+}
+let c = { value: 10 };
+inc_02(c);
+console.log("Outside function:" + c.value);
