@@ -107,64 +107,17 @@
 
 
 // Making two rectangle objects using constructor function
-// function Rectangle(len, br) {
+function Rectangle(len, br) {
 
 
-//     this.length = len;
-//     this.breadth = br;
-//     this.draw = function() {
+    this.length = lr;
+    this.breadth = br;
+    this.draw = function {
 
-//         console.log("Drawing rectangle of len:" + this.length + ", width:" + this.breadth);
+        console.log("Drawing rectangle.");
 
-//     }
-
-
-
-// }
-
-// Creating multiple rectangle objects
-// let rectangleObj1 = new Rectangle(6, 4);
-// rectangleObj1.draw();
-// console.log(rectangleObj1);
-// let rectangleObj2 = new Rectangle(8, 2);
-// rectangleObj2.draw();
-// console.log(rectangleObj2);
-
-// Which one to user for creating objects? (Depends on your needs)
-
-
-// Dynamic Nature of Objects (i.e. additional & removal of properties of objects)
-function Rect() {
-
-    this.length = 3;
-    this.breadth = 1;
-    this.draw = function() {
-
-        console.log("Drawing Rectangle.");
     }
+
+
+
 }
-
-// adding new property to 'Rect' object
-let rectObj = new Rect();
-rectObj.color = "yellow";
-console.log("Property added.");
-console.log(rectObj);
-
-
-
-//adding methods
-console.log("Method added.");
-rectObj.colorFill = function() {
-
-    console.log("Yellow color Filled.");
-};
-
-console.log(rectObj);
-console.log(rectObj.colorFill());
-
-
-// since, objects are reference data types isiliye changes same address par hote hai, so don't run addition & deletion operation simultaneously (function is also an object,this we will see later in the code!)
-// deleting property from 'Rect' object
-// delete rectObj.length;
-// console.log("Property deleted.");
-// console.log(rectObj);

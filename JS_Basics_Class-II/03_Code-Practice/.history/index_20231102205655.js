@@ -160,7 +160,7 @@ rectObj.colorFill = function() {
 };
 
 console.log(rectObj);
-console.log(rectObj.colorFill());
+console.log(reactObj.colorFill());
 
 
 // since, objects are reference data types isiliye changes same address par hote hai, so don't run addition & deletion operation simultaneously (function is also an object,this we will see later in the code!)

@@ -138,10 +138,6 @@ function Rect() {
 
     this.length = 3;
     this.breadth = 1;
-    this.draw = function() {
-
-        console.log("Drawing Rectangle.");
-    }
 }
 
 // adding new property to 'Rect' object
@@ -149,18 +145,6 @@ let rectObj = new Rect();
 rectObj.color = "yellow";
 console.log("Property added.");
 console.log(rectObj);
-
-
-
-//adding methods
-console.log("Method added.");
-rectObj.colorFill = function() {
-
-    console.log("Yellow color Filled.");
-};
-
-console.log(rectObj);
-console.log(rectObj.colorFill());
 
 
 // since, objects are reference data types isiliye changes same address par hote hai, so don't run addition & deletion operation simultaneously (function is also an object,this we will see later in the code!)

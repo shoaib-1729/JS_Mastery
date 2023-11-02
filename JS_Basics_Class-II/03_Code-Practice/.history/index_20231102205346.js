@@ -153,14 +153,12 @@ console.log(rectObj);
 
 
 //adding methods
-console.log("Method added.");
-rectObj.colorFill = function() {
+reactObj.colorFill = function() {
 
     console.log("Yellow color Filled.");
 };
-
+console.log("Method added.");
 console.log(rectObj);
-console.log(rectObj.colorFill());
 
 
 // since, objects are reference data types isiliye changes same address par hote hai, so don't run addition & deletion operation simultaneously (function is also an object,this we will see later in the code!)
