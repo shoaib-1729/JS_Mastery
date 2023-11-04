@@ -280,78 +280,32 @@ let rectangle = {
     // keys-- > length, breadth
     // value-- > 3,1
     length: 3,
-    breadth: 1,
-    sides: 4
+    breadth: 1
 };
 
 // for-in loop syntax
-// for (let key in rectangle) {
+for (let key in rectangle) {
 
-// key ko access --> key (eg. length, breadth)
-// key ke corresponding uski values ko access --> objectName[property] (eg. 1,2)
-//     console.log("key:" + key, "value:" + rectangle[key]);
-// }
+    // key ko access --> key (eg. length, breadth)
+    // key ke corresponding uski values ko access --> objectName[property] (eg. 1,2)
+    console.log("key:" + key, "value:" + rectangle[key]);
+}
 
 // for-of loop (only for iterables such as Arrays, strings, maps, etc)
 // Not for objects, as objects are not iterables
 // Iterables (used to iterate throughout the whole data in a data structure, loop counter we can say...)
 
-// for-of loop (object) --> error
+// for-of loop (object) --> not working
 
 // this code will not work, as 'rectangle' is not an iterable
-// for (let key of rectangle) {
-//     console.log(key);
-// }
+for (let key of rectangle) {
+    console.log(key);
+}
+console.log(rectangle);
 
-// Print keys and value of an object using Object.keys(objectName) & Object.values(objectName)
-// they return as arrays consisting of all possible values of keys & values resp.
-console.log(Object.keys(rectangle));
-console.log(Object.values(rectangle));
 
 // hack to make for-of loop work with objects, just change 'rectangle' to 'Object.keys(rectangle)' so that it becomes iterable
 for (let key of Object.keys(rectangle)) {
 
     console.log(key);
 }
-
-
-// How to check given prop/key exist or not?
-console.log(rectangle);
-if ('color' in rectangle) {
-
-    console.log("Present");
-
-} else {
-    console.log("Absent");
-}
-
-
-// Object Cloning (yaani object mei cheezei clone nhi hoti because it is reference data type, but if we want to clone it then how can we do that?)
-// Object Cloning can be done using 3 methods (iteration, assign, spread)
-
-
-// Iteration (using loops)
-let src = { v1: 10, v2: 20, v3: 30 };
-// let dest = {};
-// Clone-01
-// for (key in src) {
-//     dest[key] = src[key];
-
-// }
-// console.log(dest);
-
-// Assign (i.e. using assign() function)
-// Clone-02
-// assign({}, src) will assign values to src to {}
-// let dest = Object.assign({}, src);
-// console.log(dest);
-
-
-// Spread (i.e. using spread operator)
-let dest = {...src };
-console.log(dest);
-
-// Garbage Collection (the garbage collector finds the objects which are of no use or unwanted, then de-allocate the memory space they are occupying automatically)
-//C, C++ mei manually karna padta hai, Java aur JavaScript mei automatic hota hai due to the garbage collector
-// We have no control over Garbage Collector(GC), when to start/stop it is not in our control..
-//GC always keeps running in background

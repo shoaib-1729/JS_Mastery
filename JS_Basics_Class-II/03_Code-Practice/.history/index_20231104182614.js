@@ -343,15 +343,5 @@ let src = { v1: 10, v2: 20, v3: 30 };
 // Assign (i.e. using assign() function)
 // Clone-02
 // assign({}, src) will assign values to src to {}
-// let dest = Object.assign({}, src);
-// console.log(dest);
-
-
-// Spread (i.e. using spread operator)
-let dest = {...src };
+let dest = Object.assign({}, src);
 console.log(dest);
-
-// Garbage Collection (the garbage collector finds the objects which are of no use or unwanted, then de-allocate the memory space they are occupying automatically)
-//C, C++ mei manually karna padta hai, Java aur JavaScript mei automatic hota hai due to the garbage collector
-// We have no control over Garbage Collector(GC), when to start/stop it is not in our control..
-//GC always keeps running in background

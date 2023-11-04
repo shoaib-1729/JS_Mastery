@@ -348,10 +348,4 @@ let src = { v1: 10, v2: 20, v3: 30 };
 
 
 // Spread (i.e. using spread operator)
-let dest = {...src };
-console.log(dest);
-
-// Garbage Collection (the garbage collector finds the objects which are of no use or unwanted, then de-allocate the memory space they are occupying automatically)
-//C, C++ mei manually karna padta hai, Java aur JavaScript mei automatic hota hai due to the garbage collector
-// We have no control over Garbage Collector(GC), when to start/stop it is not in our control..
-//GC always keeps running in background
+let dest = {..., src };
