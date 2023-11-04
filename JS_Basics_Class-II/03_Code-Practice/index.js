@@ -358,4 +358,4 @@ console.log(dest);
 
 
 
-// Js Class-02 code practice ends here
+// JS Class-02 code practice ends here.
