@@ -355,3 +355,7 @@ console.log(dest);
 //C, C++ mei manually karna padta hai, Java aur JavaScript mei automatic hota hai due to the garbage collector
 // We have no control over Garbage Collector(GC), when to start/stop it is not in our control..
 //GC always keeps running in background
+
+
+
+// Js Class-02 code practice ends here
