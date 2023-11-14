@@ -513,7 +513,7 @@
 // JS --> Difficult (No, bss JS practice mangta hai baaki Programming Lang. ki tarah)
 
 // since for traversing an array we require iterables or loop counter, for Iterables we can use for-of loop
-let newArr = [10, 20, 30, 40, 50];
+// let newArr = [10, 20, 30, 40, 50];
 // console.log("Traversing array using for-of loop:")
 // for (let val of newArr) {
 
@@ -551,21 +551,135 @@ let newArr = [10, 20, 30, 40, 50];
 // Joining Arrays
 
 // Example-01 (joining array of numbers on the basis of ',')
-let number = [1, 2, 3];
-const joined = number.join(',');
-console.log('Array after Joining:');
-console.log(joined);
+// let number = [1, 2, 3];
+// const joined = number.join(',');
+// console.log('Array after Joining:');
+// console.log(joined);
 
 // Example-02 (joining array of strings on the basis of '_')
-let message = ["This", "is", "my", "first", "message"];
-const joined2 = message.join('_');
-console.log('Array after Joining:');
-console.log(joined2);
+// let message = ["This", "is", "my", "first", "message"];
+// const joined2 = message.join('_');
+// console.log('Array after Joining:');
+// console.log(joined2);
 
 // Is reverse is possible? (i.e. we can split or not?)
 // Splitting Array
-console.log('Splitting String:');
-let message2 = "This is my first message";
+// console.log('Splitting String:');
+// let message2 = "This is my first message";
 // split() --> returns an array after splitting on the basis of given parameter
-const parts = message2.split(' ');
-console.log(parts);
+// const parts = message2.split(' ');
+// console.log(parts);
+
+
+//Sorting Arrays
+// let numbers = [10, 50, 20, 40, 30];
+// sort() --> sorts the array in ascending order and returns the reference to the original array
+// numbers.sort();
+// console.log(numbers);
+
+// Problem with sort() function (it works for strings, but doesn't work for numeric values, to correctly sort numbers we should provide comparison function inside sort())
+let numbers2 = [5, 6, 40, 2, 10];
+// numbers2.sort();
+// Output is not correct (Why?), sort() ki internal working ko samjho (refer mdn,w3schools,etc), ye numbers ko strings mei convert kar deta hai phir unhei alphabetically sort karta hai, for eg. "25" is bigger than "100", because "2" is bigger than "1".
+// console.log(numbers2);
+
+// toSorted() original array ko mutate nahi karta, balki dusri array mei sort use karke return karta hai
+// If, we want the correct output for numeric literals as well, then we have to use predicate function inside sort() to gets the numbers sorted in the way we want (compare function jo humne likha hai uske behind logic kya hai? --> refer sort() w3schools)
+let sorted = numbers2.toSorted(
+    // Predicate/Callback/Comparison function
+    function(val1, val2) {
+        // ab sort(), elements ke difference ke basis pr unhei sort karega ascending order mei..
+        return val1 - val2;
+
+    }
+);
+
+console.log(sorted);
+console.log(numbers2);
+
+// Converting the comparison function to Arrow Function
+// let sorted = numbers2.sort((val1, val2) => val1 - val2);
+// console.log(sorted);
+
+// Sorting Primitives --> Done
+// Sorting References
+
+// let arr = [
+
+// Item-01 (object-01)
+// { no: 1, name: "Love Babbar" },
+// Item-02 (object-02)
+// { no: 2, name: "Shoaib Akhtar" }
+
+// ];
+
+// arr.sort();
+// console.log(arr);
+
+
+
+// filter() method
+
+// let arr2 = [-1, 9, -2, 4, 0, -6];
+
+// let filtered = arr2.filter(
+
+
+// Predicate Function/ Callback function/ Compare Function (kis basis par filter karna hai woh ye function batayega)
+// function(val) {
+
+// Return only +ve value
+//         return val >= 0;
+
+
+//     }
+// );
+
+// console.log(filtered);
+
+
+// map() method in array
+// num = [7, 8, 9, 10.12];
+
+// let mapped = num.map(
+
+// Compare Function/ Predicate Function (kis basis par map hoga)
+//     function(value) {
+//         return 'student_no.' + value;
+
+//     }
+
+
+// );
+// console.log(mapped);
+// console.log(num);
+
+
+
+// Mapping with Objects
+
+numArr = [-7, -8, 0, 1, 2];
+
+let filtered = numArr.filter(val => val >= 0);
+// Now mapping values of 'filtered' array with map() method
+
+// let objMap = filtered.map(
+// Compare Function / Predicate Function
+//     function(val) {
+//         return { value: val };
+
+//     }
+// );
+
+// Converting Predicate Function into Arrow Function
+// let objMap = filtered.map(num => ({ value: num }));
+// console.log(objMap);
+
+
+// Chaining
+// Applying chaining in above code
+
+// Doing all of the above tasks in just one line of code (this is called chaining, n=but this reduces readability of your code & is difficult to understand what is being done?)
+let items = numArr.filter(val => val >= 0).map(num => ({ value: num }));
+
+console.log(items);
