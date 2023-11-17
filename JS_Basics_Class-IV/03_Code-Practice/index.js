@@ -312,54 +312,175 @@
 
 // Defining person object again, and throwing custom error in set method if value provided by the user is not a String
 
-let person = {
+// let person = {
 
-    fName: 'Love',
-    lName: 'Babbar',
+//     fName: 'Love',
+//     lName: 'Babbar',
 
-    // get property
-    get fullName() {
-        return `${person.fName} ${person.lName}`
+// get property
+// get fullName() {
+//     return `${person.fName} ${person.lName}`
 
-    },
-
-
-    // set property
-    set fullName(name) {
-
-        // Throwing custom error if 'name' does not belongs to 'String' class
-        if (typeof name !== 'string') {
-            console.log("Inside if")
-                // Throwing custom error object (ye custom error message throw kaha hoga --> jaha se ise call kara hoga ...)
-            throw new Error("Not a String!");
-        }
-        // if 'name' is a string then continue further operations
-        console.log("Outside If");
-        let parts = name.split(' ');
-        this.fName = parts[0];
-        this.lName = parts[1];
-        // console.log("Console this object:")
-        // console.log(this);
-    }
-}
+// },
 
 
+// set property
+// set fullName(name) {
 
-try {
-
-    // This line wil generate an error since value is not a String --> catch block will execute
-    // This line will call set property with 'true' as argument (i.e. person.fullName(true))
-    // person.fullName = true;
-
-    // This will execute smoothly
-    person.fullName = "Shoaib Akhtar";
-    console.log(person.fullName);
+// Throwing custom error if 'name' does not belongs to 'String' class
+// if (typeof name !== 'string') {
+//     console.log("Inside if")
+// Throwing custom error object (ye custom error message throw kaha hoga --> jaha se ise call kara hoga ...)
+//     throw new Error("Not a String!");
+// }
+// if 'name' is a string then continue further operations
+// console.log("Outside If");
+// let parts = name.split(' ');
+// this.fName = parts[0];
+// this.lName = parts[1];
+// console.log("Console this object:")
+// console.log(this);
+// }
+// }
 
 
 
+// try {
 
-} catch (e) {
-    // the error generated will get stored in 'e' passed as a parameter beside catch keyword, then we will alert that error stored in 'e'
-    console.log(e);
+// This line wil generate an error since value is not a String --> catch block will execute
+// This line will call set property with 'true' as argument (i.e. person.fullName(true))
+// person.fullName = true;
 
-}
+// This will execute smoothly
+// person.fullName = "Shoaib Akhtar";
+// console.log(person.fullName);
+
+
+
+
+// } catch (e) {
+// the error generated will get stored in 'e' passed as a parameter beside catch keyword, then we will alert that error stored in 'e'
+//     console.log(e);
+
+// }
+
+
+
+
+// Scopes (jeevankal ya life span of a variable is called Scope of the variable)
+
+// let v/s var
+
+// let --> ka scope block ke andar tak hota hai jahan par woh defined hota hai, us block ke bahar uska scope khatam ho jaata hai
+// var --> ka scope us block tak (if defined inside a function) or that complete file (if not defined inside a function)
+
+
+
+// Output Questions on Scopes: ) -
+// Question No-1
+// {
+
+//     let a = 5;
+//     console.log("Inside Block:");
+// Print ho jaayega
+// console.log(a);
+// }
+// Print nahi hoga
+// console.log("Outside Block:");
+
+// Question No-2
+// function demo() {
+
+// var a = 5;
+// console.log(a);
+
+
+// }
+// demo();
+// console.log(a);
+
+// Question No-3
+// if (true) {
+
+//     let a = 5;
+// }
+// console.log(a);
+
+// Question No-4
+// if (true) {
+//     var a = 5;
+// }
+// console.log(a);
+
+// Question No-5
+// for (let i = 0; i < 10; i++) {
+
+// }
+// console.log(i);
+
+// Question No-6
+// for (var i = 0; i < 10; i++) {
+
+// }
+// console.log(i);
+
+
+// Question No-7 (this code snippet will work fine or not?)
+
+// function a() {
+//     const a = 5;
+// }
+
+
+// function b() {
+//     const a = 5;
+// }
+
+// Question No-8 (this code snippet will work fine or not?)
+// const a = 5;
+
+// function xyz() {
+
+//     const a = 5;
+
+// }
+
+// Question No-8 (this code snippet will work fine or not?)
+// function a() {
+//     const ab = 5;
+
+// }
+// const ab = 5;
+
+// function b() {
+
+//     const ab = 5;
+// }
+
+
+// Reducing an Array (refer mdn, w3schools)
+
+let arr = [1, 2, 3, 4, 5];
+let total = 0;
+
+// Calculating 'sum' using for-of loop (for-in loop mei arr[val] likhege)
+// for (val of arr) {
+
+//     total += val;
+
+// }
+// console.log(total);
+
+
+// poore array ko ek sum variable mei reduce karna hai --> Reducing an Array bolte hai
+// Calculating 'sum' using reduce() method
+
+
+let totalSum = arr.reduce(
+    // Callback Function (Arrow Function)
+    (accumulator, currentValue) => accumulator + currentValue, 0
+
+);
+
+console.log("Printing Array Sum using Reduce Method:")
+console.log(totalSum);
