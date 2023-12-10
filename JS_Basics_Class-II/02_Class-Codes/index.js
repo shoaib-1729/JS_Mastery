@@ -42,7 +42,7 @@ console.log('Chaliye shuru karte hai ');
 
 // Rectangle.
 
-// //object creation using constrcutor function
+// object creation using constrcutor function
 // let rectangleObject = new Rectangle(4,6);
 
 // rectangleObject.color = 'yellow';
@@ -129,8 +129,8 @@ console.log('Chaliye shuru karte hai ');
 // console.log(a.value);
 
 let rectangle = {
-    length:2,
-    breadth:4
+    length: 2,
+    breadth: 4
 };
 
 //for-in loop 

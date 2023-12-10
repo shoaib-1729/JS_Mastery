@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM - 02</title>
+
+
+    <!-- Internal Styles -->
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        div {
+            color: black;
+        }
+        
+        #parent {
+            height: 300px;
+            width: 300px;
+            background-color: orange;
+        }
+        
+        #child {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+        }
+        
+        #grandChild {
+            height: 100px;
+            width: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Heading -->
+    <h1>Event Phases</h1>
+
+    <!-- Div -->
+    <div id="parent">
+        P
+        <div id="child">
+            C
+            <div id="grandChild">
+                GC
+            </div>
+        </div>
+    </div>
+
+
+    <!-- External Script  -->
+    <script src="02_eventPhases.js"></script>
+</body>
+
+</html>
