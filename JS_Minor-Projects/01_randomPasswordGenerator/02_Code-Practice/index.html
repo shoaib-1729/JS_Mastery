@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+</head>
+
+<body style="background-color: #212121; color:#fff">
+    <!-- Top Level Wrapper Div -->
+    <div>
+        <!-- heading -->
+        <h1>Password Generator</h1>
+        <!-- First Div (Text & Copy icon) -->
+        <div>
+
+            <!-- input (readonly, password text ke liye) -->
+            <input readonly placeholder="password" id="display" value="" data-passwordDisplay>
+            <label for="display"></label>
+            <button copy-btn>
+                <!-- upar wala text jo visible hoga, copy karne par  -->
+                    <span data-copyMsg></span>
+                    <!-- copy icon -->
+                    <img src="./assets/copy.svg" height="25px" width="25px" alt="copy-icon">
+           </button>
+
+
+        </div>
+
+        <!-- Second Div -->
+        <div>
+            <!-- text div -->
+            <div>
+                <p>Password Generator</p>
+                <!-- initially, length to 10 (uska logic JS mei likha hai) -->
+                <span password-data></span>
+            </div>
+
+            <!-- slider div -->
+            <div class="slidecontainer">
+                <label for="myRange"></label>
+                <input type="range" min="1" max="20" step="1" class="slider" id="myRange" value="" input-slider>
+            </div>
+
+            <!-- checkbox div -->
+            <div>
+                <!-- Uppercase Checkbox  -->
+                <div>
+                    <input type="checkbox" id="upperCase">
+                    <label for="upperCase">Include Uppercase Letters</label>
+                </div>
+                <!-- Lowercase Checkbox  -->
+                <div>
+                    <input type="checkbox" id="lowerCase">
+                    <label for="lowerCase">Include Lowercase Letters</label>
+                </div>
+                <!-- Numbers Checkbox  -->
+                <div>
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Include Numbers</label>
+                </div>
+                <!-- Symbols Checkbox -->
+                <div>
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Include Symbols</label>
+                </div>
+            </div>
+
+            <!-- strength div -->
+            <div>
+                <!-- text -->
+                <p>Strength</p>
+                <!-- circular div (css) -->
+                <div strength-indicator></div>
+            </div>
+        </div>
+
+        <!-- button -->
+        <button class="generate-btn">Generate Password</button>
+
+
+
+    </div>
+    <!-- External JS -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
