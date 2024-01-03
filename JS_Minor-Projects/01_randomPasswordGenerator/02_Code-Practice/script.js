@@ -26,6 +26,10 @@ function handleSlider() {
     inputSlider.value = passwordLength;
     // initially, set the password length to password data element
     passwordData.textContent = passwordLength;
+    // set the bg-color property of slider (ki jitna password length hai, bss wahi tak color fill ho)
+    const min = inputSlider.min;
+    const max = inputSlider.max;
+    inputSlider.style.backgroundSize = ((passwordLength - min) / (max - min) * 100) + "% 100%"
 }
 
 
@@ -39,10 +43,11 @@ function setIndicator(color) {
     // bg color
     strengthIndicator.style.backgroundColor = color;
     // shadow
-    // strengthIndicator.style.boxShadow = color;
+    strengthIndicator.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
-
+// make indicator bg-color 'grey' initially
+setIndicator('#ccc');
 // function getRandInteger(min, max) gives a random integer from min to max
 function getRandInteger(min, max) {
     return Math.floor((Math.random() * (max - min)) + min)
@@ -101,13 +106,12 @@ function calcStrength() {
     if (symbolsCheck.checked) hasSym = true;
 
     // change bg color of the indicator on the basis of strong, normal and weak (logic will vary)
-    if (hasUpper && hasLower && (hasNum || hasSym) && (passwordLength >= 8)) {
-        setIndicator('#0f0')
-    } else if ((hasLower || hasUpper) && (hasNum || hasSym) || (passwordLength >= 6)) {
-        setIndicator('#ff0');
+    if (hasUpper && hasLower && (hasNum || hasSym) && passwordLength >= 8) {
+        setIndicator("#0f0");
+    } else if ((hasLower || hasUpper) && (hasNum || hasSym) && passwordLength >= 6) {
+        setIndicator("#ff0");
     } else {
-        setIndicator('#f00')
-
+        setIndicator('#f00');
     }
 }
 
@@ -116,12 +120,13 @@ function calcStrength() {
 
 // fetch the copy msg element (jo copy karne ke baad visible hoga)
 let copyMsg = document.querySelector('[data-copyMsg]')
-
+    // fetch the input text field
+const passwordField = document.querySelector('[data-passwordDisplay]')
 async function copyContent() {
     // use the method navigator.clipboard.writeText() for copying to clipboard, since writeText() returns a promise consume it using async-await or then()
     // in case of async-await, handling error using try catch block
     try {
-        await navigator.clipboard.writeText(passwordData.value);
+        await navigator.clipboard.writeText(passwordField.value);
         copyMsg.innerText = "Copied";
 
     } catch (error) {
@@ -264,8 +269,6 @@ generateBtn.addEventListener('click', function() {
     // console.log('Final Password After Shuffling: ' + password + "Length:" + password.length);
 
     // since password is updated, display it to the UI
-    // fetch the input text field
-    const passwordField = document.querySelector('[data-passwordDisplay]')
     passwordField.value = password;
     // console.log('UI Addition Done.')
     // after displaying the password in the UI, calculate the strength of it
