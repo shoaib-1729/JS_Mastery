@@ -1,0 +1,338 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+/* custom colors */
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+    color: var(--colorLight2);
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.tab {
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+
+
+/* adding styles current-tab class, inserted by JS (dynamic class) */
+
+.tab.current-tab {
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+.weather-container {
+    margin-block: 4rem;
+}
+
+
+/* grant access button */
+
+.btn {
+    /* disable all defaults styles for button set by the browser (appearance none se bhi ho sakta hai) */
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+}
+
+
+/* common container */
+
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* grant access container */
+
+
+/* hide grant access container by default  */
+
+.grant-access-container {
+    display: none;
+}
+
+
+/* dynamic active class */
+
+.grant-access-container.active {
+    display: flex;
+}
+
+
+/* styling each component in grant access individually */
+
+.grant-access-container img {
+    margin-bottom: 2rem;
+}
+
+.grant-access-container p:first-of-type {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.grant-access-container p:last-of-type {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+
+/* loading UI */
+
+
+/* hide loading screen by default */
+
+.loading-screen-container {
+    display: none;
+}
+
+.loading-screen-container p {
+    text-transform: uppercase;
+}
+
+
+/* dynamic active class (hide kar rahe to visible bhi karwana hoga JS ke through)*/
+
+.loading-screen-container.active {
+    display: flex;
+}
+
+
+/* user info container  */
+
+
+/* hide user-info-container by default */
+
+.user-info-container {
+    display: none;
+}
+
+
+/* dynamic active class */
+
+.user-info-container.active {
+    display: flex;
+}
+
+.user-info-container p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.user-info-container img {
+    width: 90px;
+    height: 90px;
+}
+
+.city-name {
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+p[data-weatherDesc] {
+    text-transform: capitalize;
+}
+
+.city-name p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.city-name img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.user-info-container p[data-temp] {
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.weather-info-container {
+    width: 90%;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parameter {
+    width: 90%;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    /* justify space-between property, doesn't have effect as it centres the div vertically (flex-direction column kar diya hai)*/
+    align-items: center;
+}
+
+.parameter img {
+    width: 50px;
+    height: 50px;
+}
+
+.parameter p:first-of-type {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+
+/* form container */
+
+
+/* search form container styling */
+
+.search-form-container {
+    display: none;
+}
+
+
+/*  dynamic active class styling  */
+
+.search-form-container.active {
+    display: flex;
+}
+
+form {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    /* display flex will be added by the js using active class styling defined in css */
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.search-form-container input {
+    /*give the parent width(100%) - button width(80px ) to the input search tag*/
+    /* remove the default styling of the form element (appearance none can be used here) */
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+
+/* styling placeholder attribute of input tag */
+
+.search-form-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* set the border when te input is clicked */
+
+.search-form-container input:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.7)
+}
+
+
+/* styling search button in form container */
+
+.search-form-container .btn {
+    /*remove the default padding set by the browser*/
+    /*explore unset property css(google)*/
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    border: none;
+    /*display flex to center the image inside button*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-bottom: 1px;
+}
+
+
+/* Not found image styles */
+
+
+/* hide icon initially */
+
+[data-httpError-icon] {
+    display: none;
+}
+
+
+/* add active class to display icon */
+
+[data-httpError-icon].active {
+    display: block;
+    height: 300px;
+    width: 300px;
+    margin: auto auto;
+}
+
+[data-httpError-icon] p {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+[data-httpError-icon] img {
+    height: 100%;
+    width: 100%;
+}

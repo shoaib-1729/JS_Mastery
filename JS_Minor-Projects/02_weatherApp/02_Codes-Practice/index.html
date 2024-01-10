@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather APP | CodeHelp </title>
+    <!-- favicon -->
+    <link rel="icon" href="./assets/favicon.ico">
+    <!-- Font Family  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <!-- wrapper container -->
+    <div class="wrapper">
+
+        <!-- heading -->
+        <h1>Weather App</h1>
+        <!-- tab container -->
+        <div class="tab-container">
+            <p class="tab" userTab>Your Weather</p>
+            <p class="tab" searchTab>Search Weather</p>
+        </div>
+
+
+        <div class="weather-container">
+            <!--grant location access wala UI -->
+            <div class="grant-access-container sub-container">
+                <!-- image -->
+                <img src="./assets/location.png" height="80px" width="80px" loading="lazy" alt="locationIcon">
+                <!-- text -->
+                <p>Grant Location Access</p>
+                <!-- text -->
+                <p>Allow Access To Get Weather Information</p>
+                <!-- grant access button -->
+                <button class="btn" grant-access-btn>Grant Access</button>
+            </div>
+
+            <!-- search weather wala UI -->
+            <!-- form -->
+            <form class="search-form-container search-parameter">
+                <!-- search input -->
+                <input type="text" placeholder="Search for city ..." id="citySearch" search-city-input>
+                <!-- <label for="citySearch"></label> -->
+                <!-- submit button -->
+                <button type="submit" class="btn" data-search-btn>
+                        <!-- search img inside button -->
+                        <img src= "./assets/search.png" height="20px" width="20px" loading="lazy" alt="searchButton">
+                </button>
+            </form>
+
+            <!-- loading gif wala UI -->
+            <div class="sub-container loading-screen-container">
+                <!-- loading gif -->
+                <img src="./assets/loading.gif" alt="loadingIcon" height="150px" width="150px">
+                <!-- text -->
+                <p>Loading</p>
+            </div>
+
+            <!-- user info container -->
+            <!-- this container will container all the UI's (present saare UI rahege, bss unko hide kar dege) -->
+            <div class="sub-container user-info-container">
+                <!-- city name div -->
+                <div class="city-name">
+                    <!-- cityName, dynamic (inserted using js) -->
+                    <p data-cityName></p>
+                    <!-- city flag icon, dynamic (inserted using js) -->
+                    <img src="" alt="" data-countryIcon>
+                </div>
+                <!-- weather description,  dynamic (inserted using js) -->
+                <p data-weatherDesc></p>
+                <!-- weather image icon (dynamic, inserted using js) -->
+                <img src="" alt="" data-weatherIcon>
+                <!-- temperature wala text (dynamic, inserted using js) -->
+                <p data-temp></p>
+                <!-- weather info container  -->
+                <div class="weather-info-container">
+                    <!-- windspeed container -->
+                    <div class="parameter">
+                        <!-- wind speed image (static) -->
+                        <img src="./assets/wind.png" alt="windspeed">
+                        <p>Windspeed</p>
+                        <!-- Windspeed data (dynamic) -->
+                        <p data-windspeed></p>
+                    </div>
+                    <!-- humidity container -->
+                    <div class="parameter">
+                        <!--  humidity image (static) -->
+                        <img src="./assets/humidity.png" alt="humidity" humidityImage>
+                        <p>Humidity</p>
+                        <!-- humidity data (dynamic, inserted using js) -->
+                        <p data-humidity></p>
+                    </div>
+                    <!-- clouds container -->
+                    <div class="parameter">
+                        <!-- clouds image (static) -->
+                        <img src="./assets/cloud.png" alt="clouds" cloudImage>
+                        <p>Clouds</p>
+                        <!-- clouds data (dynamic, inserted using js) -->
+                        <p data-cloud></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- HTTPS Error wala UI -->
+            <div data-httpError-icon>
+                <img src="" alt="">
+                <p>OOPS! NOT FOUND</p>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- external JS -->
+    <script src='./script.js'></script>
+</body>
+
+</html>
